@@ -15,8 +15,8 @@ class HomeController extends BaseController
 {
 
     public function index(){
+        
         $islogin = isset( $_SESSION['user']);
-
         return View::make('home.index', ['islogin' => $islogin]);
     }
 
@@ -93,6 +93,25 @@ class HomeController extends BaseController
         return View::make('home.GoFish');
     }
 
+    public function showProfile(){
+        return View::make('home.show', ['utilizador' => Session::get('user')]);
+    }
+
+    public function updateProfile()
+    {
+        $utilizador = Utilizadores::find(Session::get('user')->id);
+        $utilizador->update_attributes(Post::getAll());
+
+        if($utilizador->is_valid()){
+            $utilizador->save();
+            Session::set('user', $utilizador);
+            Redirect::toRoute('home/index');
+        } else {
+            // return form with data and errors
+            Redirect::flashToRoute('home/show', ['user' => $utilizador]);
+        }
+    }
+
 
     public function worksheet(){
 
@@ -122,5 +141,7 @@ class HomeController extends BaseController
     public function about(){
         return View::make('home.about');
     }
+
+
 
 }

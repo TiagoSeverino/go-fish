@@ -8,5 +8,5 @@
 
 class Utilizadores extends \ActiveRecord\Model
 {
-
+    
 }
