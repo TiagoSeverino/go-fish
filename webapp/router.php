@@ -18,9 +18,6 @@ Router::get('home/index',	'HomeController/index');
 Router::get('home/start',	'HomeController/start');
 Router::get('home/about', 'HomeController/about');
 
-Router::get('plano/index', 'PlanoController/index');
-Router::post('plano/show', 'PlanoController/show');
-
 Router::get('home/login', 'HomeController/login');
 Router::post('home/login', 'HomeController/dologin');
 

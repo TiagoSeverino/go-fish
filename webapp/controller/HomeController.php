@@ -15,13 +15,9 @@ class HomeController extends BaseController
 {
 
     public function index(){
-        if(isset( $_SESSION['user'])){
-            var_dump($_SESSION['user']);
-            Throw new Exception("session detectada: " . $_SESSION['user']->id);
-        }else{
-            //Throw new Exception("sessão não existe");
-        }
-        return View::make('home.index');
+        $islogin = isset( $_SESSION['user']);
+
+        return View::make('home.index', ['islogin' => $islogin]);
     }
 
     public function start(){
