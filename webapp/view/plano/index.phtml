@@ -1,0 +1,24 @@
+<?php
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+Layout::includeLayout('indexheader'); ?>
+<!doctype html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="<?=Url::toRoute('plano/show')?>" method="post">
+    Nome<input name="nome">
+    Despesa<input name="despesas">
+    Valor de Crédito <input name="credito">
+    Número de Prestações <input name="n_prestacoes">
+    <input type="submit" value="Submeter">
+</form><br>
+</body>
+<?php Layout::includeLayout('footer'); ?>
+</html>
