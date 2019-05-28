@@ -17,6 +17,7 @@ Router::get('home/',		'HomeController/index');
 Router::get('home/index',	'HomeController/index');
 Router::get('home/start',	'HomeController/start');
 Router::get('home/about', 'HomeController/about');
+Router::post('home/index', 'HomeController/index');
 
 Router::get('home/login', 'HomeController/login');
 Router::post('home/login', 'HomeController/dologin');
@@ -27,13 +28,7 @@ Router::get('home/logout', 'HomeController/logout');
 
 Router::get('home/GoFish', 'TestController/index');
 
-
-
-
-
-
-
-
-
+Router::get('home/show', 'HomeController/showProfile');
+Router::post('home/show', 'HomeController/updateProfile');
 
 /************** End of URLEncoder Routing Rules ************************************/
