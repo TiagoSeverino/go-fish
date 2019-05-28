@@ -25,7 +25,7 @@ Router::get('home/signup', 'HomeController/register');
 Router::post('home/signup', 'HomeController/doregister');
 Router::get('home/logout', 'HomeController/logout');
 
-Router::get('home/GoFish', 'HomeController/GoFish');
+Router::get('home/GoFish', 'TestController/index');
 
 
 
