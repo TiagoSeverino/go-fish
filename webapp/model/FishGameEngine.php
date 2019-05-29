@@ -1,4 +1,6 @@
 <?php
+use RedBeanPHP\Logger\RDefault\Debug;
+use Tracy\Debugger;
 
 class FishGameEngine {
     public $_playerHand;
@@ -25,8 +27,10 @@ class FishGameEngine {
     public function addCardsToHand(array $cards) {
         if ($this->_playerTurn) {
             $this->_playerHand->addCardsToHand($cards);
+            $this->_botHand->removeCardsFromHand($cards);
         } else {
             $this->_botHand->addCardsToHand($cards);
+            $this->_playerHand->removeCardsFromHand($cards);
         }
     }
         
@@ -47,16 +51,30 @@ class FishGameEngine {
             return $this->_playerHand->askCardsInHand($card);
     }
 
+    public function checkFish(){
+        //TODO: Corrigir esta merda
+        $playerCardCount = count($this->getPlayerHand());
+        if ($playerCardCount >= 4 ){
+            for($i = 0; $i < ($playerCardCount - 4); $i++){
+                if($this->_playerHand->_hand[$i]->getValue() == $this->_playerHand->_hand[$i + 3]->getValue()){
+                    Debugger::barDump(array_splice($this->_playerHand->_hand, $i, 3) , "Pi  ayer Fishes");
+                }
+            }
+        }
+    }
+
     public function goFish() {
         $card = $this->_deck->dealCards(1)[0];
         if ($card == null)
-            return;
+            return $card;
 
         if ($this->_playerTurn) {
             $this->_playerHand->addCardsToHand([$card]);
         } else {
             $this->_botHand->addCardsToHand([$card]);
         }
+
+        return $card;
     }
 
     public function changeCurrentPlayer() {

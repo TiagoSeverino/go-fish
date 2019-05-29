@@ -5,7 +5,7 @@ use ArmoredCore\WebObjects\Redirect;
 use ArmoredCore\WebObjects\Session;
 use ArmoredCore\WebObjects\View;
 use ArmoredCore\WebObjects\Post;
-
+use Tracy\Debugger;
 
 class TestController extends BaseController {
 
@@ -13,49 +13,74 @@ class TestController extends BaseController {
 
         //Create new game engine
         $game = new FishGameEngine();
-        \Tracy\Debugger::barDump($game);
+
+        if(isset($_SESSION['game'])){
+            $game = Session::get('game');
+        }
+        else
+        {
+            Session::set('game', $game);
+        }
+
+        Debugger::barDump($game);
+        $game->checkFish();
+        return View::make('home.GoFish', ['game' => $game]);
+    }
+
+    function play(){
+        $game = Session::get('game');
+        Debugger::barDump($game);
 
         //Ask one card
-        $card = new Card(7);
+        $card = new Card(Post::get('card'));
         $result = $game->askForCard($card);
-        \Tracy\Debugger::barDump($result, "Carta pedida");
-
+        Debugger::barDump($card, "Carta");
+        Debugger::barDump($result, "Carta pedida");
 
         //verificar se carta pedida existe
         if(count($result) == 0){
             //Go fish and change player
-            $game->goFish();
-            $game->changeCurrentPlayer();
-        } else {
-            $card = new Card(20);
-            $result = $game->askForCard($card);
-            \Tracy\Debugger::barDump($result, "Carta pedida");
-            $game->goFish();
-            $game->changeCurrentPlayer();
-        }
+            $newCard = $game->goFish();
 
-        //
-        if (count($result) == 0) {
+            if($newCard->getValue() == $card->getValue()){
+                Session::set('game', $game);
+                return;
+            }
+
+            $game->changeCurrentPlayer();
+
             $botDone = false;
             while(!$botDone) {
                 $botCard = $game->makeBotPlay();
-                \Tracy\Debugger::barDump($botCard, "Carta pedida pelo bot");
-
+                Debugger::barDump($botCard, "Carta pedida pelo bot");
 
                 $botResult = $game->askForCard($botCard);
                 if (count($botResult) == 0) {
-                    $game->goFish();
-                    $game->changeCurrentPlayer();
-                    $botDone = true;
+                    $newCard = $game->goFish();
+
+                    if($newCard->getValue() != $card->getValue()){
+                        $game->changeCurrentPlayer();
+                        $botDone = true;
+                    }
                 } else {
                     $game->addCardsToHand($botResult);
                 }
             }
+
+            Session::set('game', $game);
         } else {
             $game->addCardsToHand($result);
         }
-        
-        return View::make('home.GoFish', ['game' => $game]);
+
+        Session::set('game', $game);
     }
 
+    function delete() {
+
+        //Create new game engine
+        $game = new FishGameEngine();
+        Session::set('game', $game);
+
+        Redirect::toRoute('home/GoFish');
+    }
 }

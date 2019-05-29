@@ -44,6 +44,11 @@ class Hand
         usort($this->_hand,  ['Card','cmp']);
     }
 
+    public function removeCardsFromHand(array $cards) {
+        $this->_hand = array_diff($this->_hand, $cards);
+        usort($this->_hand,  ['Card','cmp']);
+    }
+
     /**
      * @return int
      */

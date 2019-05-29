@@ -17,6 +17,9 @@ $_deck = $game->_deck;
 ?>
 
 <ul>
+    <li>
+        <a href="<?=Url::toRoute('home/Reset')?>">Reset</a>
+    </li>
     <li style="display: inline">
         Player Score: <?php echo $_playerPoints; ?>
     </li>
@@ -28,7 +31,7 @@ $_deck = $game->_deck;
         <ul>
             <?php foreach ($_playerHand->_hand as $card) { ?>
                 <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
-                <img src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="card" id="<?= $card->_identifier ?>">
+                <img width="7%" src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="card" id="<?= $card->_identifier ?>">
             <?php } ?>
         </ul>
     </li>
@@ -37,7 +40,7 @@ $_deck = $game->_deck;
         <ul>
             <?php foreach ($_botHand->_hand as $card) { ?>
                 <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
-                <img src="<?=Asset::image('Cards/cardBack_green3.png')?>" class="" id="<?= $card->_identifier ?>">
+                <img width="7%" src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="" id="<?= $card->_identifier ?>">
             <?php } ?>
         </ul>
     </li>
@@ -46,7 +49,7 @@ $_deck = $game->_deck;
         <ul>
             <?php foreach ($_deck->_deck as $card) { ?>
                 <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
-                <img src="<?=Asset::image('Cards/cardBack_green3.png')?>" class="" id="<?= $card->_identifier ?>">
+                <img width="7%" src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="" id="<?= $card->_identifier ?>">
             <?php } ?>
         </ul>
     </li>
@@ -54,8 +57,25 @@ $_deck = $game->_deck;
 
 <script>
     $( document ).ready(function() {
+        let canPlay = true;
+
         $('.card').click(function(){
-            alert($(this).attr('id'));
+            if (canPlay == false){
+                return;
+            }
+            canPlay = false;
+            //alert($(this).attr('id'));
+
+            $.ajax({
+                type: "POST",
+                url: "GoFish",
+                data: {
+                    card:$(this).attr('id')//.replace(/\D/g,'')
+                },
+                success: function() {   
+                    location.reload();  
+                }
+            });
         });
     });
 </script>
