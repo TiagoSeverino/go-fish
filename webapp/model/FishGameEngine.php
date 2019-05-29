@@ -33,7 +33,7 @@ class FishGameEngine {
     }
 
     public function getPlayerPoints() {
-        return $this->_botPoints;
+        return $this->_playerPoints;
     }
 
     public function getBotPoints() {
