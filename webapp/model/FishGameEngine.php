@@ -12,7 +12,7 @@ class FishGameEngine {
 
     public function __construct(){
         $this->_deck = new Deck();
-        $this->initHands(7);
+        $this->initHands(20);
     }
 
     private function initHands($startingCardCount) {
@@ -76,7 +76,7 @@ class FishGameEngine {
         for($i = 0; $i < ($this->getPlayerCardCount() - 3) && $this->getPlayerCardCount() > 3; $i++){
             if($this->getPlayerHand()[$i]->getValue() == $this->getPlayerHand()[$i + 3]->getValue()){
 
-                $hand = $this->_playerHand->getHand();
+                $hand = $this->getPlayerHand();
 
                 $fish = array_splice($hand, $i, 4);
 
@@ -84,6 +84,21 @@ class FishGameEngine {
 
                 $i = 0;
                 ++$this->_playerPoints;
+
+            }
+        }
+
+        for($i = 0; $i < ($this->getBotCardCount() - 3) && $this->getBotCardCount() > 3; $i++){
+            if($this->getBotHand()[$i]->getValue() == $this->getBotHand()[$i + 3]->getValue()){
+
+                $hand = $this->getBotHand();
+
+                $fish = array_splice($hand, $i, 4);
+
+                $this->_botHand->removeCardsFromHand($fish);
+
+                $i = 0;
+                ++$this->_botPoints;
 
             }
         }
