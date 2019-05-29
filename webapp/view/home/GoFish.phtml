@@ -7,12 +7,12 @@ $game = Data::get('game');
 
 Layout::includeLayout('header');
 //var_dump($game->_playerHand);
-$_playerHand = $game->_playerHand;
-$_botHand = $game->_botHand;
+$_playerHand = $game->_playerHand->_hand;
+$_botHand = $game->_botHand->_hand;
 $_playerPoints = $game->_playerPoints;
 $_botPoints = $game->_botPoints;
 $_playerTurn = $game->_playerTurn;
-$_deck = $game->_deck;
+$_deck = $game->_deck->_deck;
 
 ?>
 
@@ -29,7 +29,7 @@ $_deck = $game->_deck;
     <li>
         Player Hand:
         <ul>
-            <?php foreach ($_playerHand->_hand as $card) { ?>
+            <?php foreach ($_playerHand as $card) { ?>
                 <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
                 <img width="7%" src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="card" id="<?= $card->_identifier ?>">
             <?php } ?>
@@ -38,7 +38,7 @@ $_deck = $game->_deck;
     <li>
         Bot Hand:
         <ul>
-            <?php foreach ($_botHand->_hand as $card) { ?>
+            <?php foreach ($_botHand as $card) { ?>
                 <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
                 <img width="7%" src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="" id="<?= $card->_identifier ?>">
             <?php } ?>
@@ -47,7 +47,7 @@ $_deck = $game->_deck;
     <li>
         Deck:
         <ul>
-            <?php foreach ($_deck->_deck as $card) { ?>
+            <?php foreach ($_deck as $card) { ?>
                 <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
                 <img width="7%" src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="" id="<?= $card->_identifier ?>">
             <?php } ?>
