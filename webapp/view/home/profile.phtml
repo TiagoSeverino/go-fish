@@ -2,6 +2,7 @@
 use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\URL;
 
+
 Layout::includeLayout('header') ?>
 
 <?php 
@@ -38,10 +39,10 @@ Layout::includeLayout('header') ?>
 									<label>Name <span class="text-danger">*</span></label>
 									<input type="text" value="<?=$utilizador->nome?>" name="nome" class="form-control">
 								</div>
-								<div class="top-margin">
-									<label>Date of Birthday <span class="text-danger">*</span></label>
-									<input type="date" value="<?=$utilizador->datanascimento?>" name="datanascimento" class="form-control">
-								</div>
+                                <div class="top-margin">
+                                    <label>Date of Birthday <span class="text-danger">*</span></label>
+                                    <input type="date" value="<?=$utilizador->datanascimento?>" name="datanascimento" class="form-control">
+                                </div>
 								<div class="top-margin">
 									<label>E-mail <span class="text-danger">*</span></label>
 									<input type="text" value="<?=$utilizador->email?>" name="email" class="form-control">

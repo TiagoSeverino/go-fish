@@ -42,12 +42,23 @@ $islogin = Data::get('islogin');
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
+
+                <?php
+                    if($islogin === true){
+                        ?>
+                        <li><a href="<?= URL::toRoute('home/index') ?>">Start Fishing</a></li>
+                        <?php
+                    }else{
+                        ?>
+                        <li><a class="btn" href="<?= URL::toRoute('home/login') ?>">SIGN IN / SIGN UP</a></li>
+                        <?php
+                    }
+                ?>
+                <li><a href="<?= URL::toRoute('home/stats') ?>">Stats</a></li>
                 <?php
                     if($islogin === true) {
                         ?>
-                        <li class="active"><a href="<?= URL::toRoute('home/index') ?>">Start Fishing</a></li>
-                        <li><a href="<?= URL::toRoute('home/start') ?>">Stats</a></li>
-                        <li><a href="<?= URL::toRoute('home/show') ?>">Show Profile</a></li>
+                        <li><a href="<?= URL::toRoute('home/profile') ?>">Show Profile</a></li>
                         <li><a href="<?= URL::toRoute('home/logout') ?>">Log Out</a></li>
                         <?php
                     }else {

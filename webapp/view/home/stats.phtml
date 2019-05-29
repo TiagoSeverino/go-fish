@@ -1,0 +1,50 @@
+<?php
+use ArmoredCore\WebObjects\Asset;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\Data;
+
+Layout::includeLayout('header');
+$users = Data::get('users');
+?>
+
+    <!-- container -->
+    <div class="container">
+
+        <h2>Top 10 Winners</h2>
+
+        <style>
+            table,th,td{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+
+        <table>
+            <tr>
+                <th>Pos</th>
+                <th style="width: 150px">Username</th>
+                <th>Wins</th>
+            </tr>
+            <?php
+                $pos = 0;
+                foreach ($users as $user) {
+                    $pos++;?>
+
+            <tr>
+                <td><?=$pos?></td>
+                <td><?=$user->username?></td>
+                <td><?=$user->numerovitorias?></td>
+            </tr>
+        </table>
+            <?php
+                } ?>
+
+
+
+
+
+
+
+    </div>	<!-- /container -->
+
+<?php Layout::includeLayout('footer') ?>

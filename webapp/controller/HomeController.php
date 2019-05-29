@@ -64,7 +64,7 @@ class HomeController extends BaseController
     public function doregister(){
         //Throw new Exception('Method not implemented. Do it yourself!');
 
-        if(Utilizadores::find(["Username"=>Post::get('Username')])){
+        if(Utilizadores::find(["username"=>Post::get('username')])){
 
             Redirect::toRoute('home/login');
         }
@@ -94,7 +94,8 @@ class HomeController extends BaseController
     }
 
     public function showProfile(){
-        return View::make('home.show', ['utilizador' => Session::get('user')]);
+        $islogin = isset( $_SESSION['user']);
+        return View::make('home.profile', ['utilizador' => Session::get('user'), 'islogin' => $islogin]);
     }
 
     public function updateProfile()
@@ -108,7 +109,7 @@ class HomeController extends BaseController
             Redirect::toRoute('home/index');
         } else {
             // return form with data and errors
-            Redirect::flashToRoute('home/show', ['user' => $utilizador]);
+            Redirect::flashToRoute('home/profile', ['user' => $utilizador]);
         }
     }
 
@@ -139,9 +140,19 @@ class HomeController extends BaseController
     }
 
     public function about(){
+
         return View::make('home.about');
     }
 
+    public function showstats(){
+        $islogin = isset( $_SESSION['user']);
 
+        /* como selecionar os 10 primeiros users ordenados pelas vitorias a partir da base de dados
+        $users = Utilizadores::find_by_sql("SELECT *"); */
+        $users = Utilizadores::all();
+
+        return View::make('home.stats', ['islogin' => $islogin, 'users' => $users]);
+
+    }
 
 }

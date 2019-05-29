@@ -30,7 +30,7 @@ Router::get('home/GoFish', 'TestController/index');
 Router::post('home/GoFish', 'TestController/play');
 Router::get('home/Reset', 'TestController/delete');///////////////////////////////////////////////
 
-Router::get('home/show', 'HomeController/showProfile');
-Router::post('home/show', 'HomeController/updateProfile');
+Router::get('home/profile', 'HomeController/showProfile');
+Router::post('home/profile', 'HomeController/updateProfile');
 
-/************** End of URLEncoder Routing Rules ************************************/
+Router::get('home/stats', 'HomeController/showstats');
