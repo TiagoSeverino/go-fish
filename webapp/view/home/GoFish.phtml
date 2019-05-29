@@ -5,12 +5,6 @@ use ArmoredCore\WebObjects\URL;
 use ArmoredCore\WebObjects\Data;
 $game = Data::get('game');
 
-$_playerHand = $game->getPlayerHand();
-$_botHand = $game->getBotHand();
-$_playerPoints = $game->getPlayerPoints();
-$_botPoints = $game->getBotPoints();
-$_deck = $game->getDeck();
-
 Layout::includeLayout('header');
 ?>
 
@@ -19,15 +13,15 @@ Layout::includeLayout('header');
         <a href="<?=Url::toRoute('home/Reset')?>">Reset</a>
     </li>
     <li style="display: inline">
-        Player Score: <?php echo $_playerPoints; ?>
+        Player Score: <?= $game->getPlayerPoints() ?>
     </li>
     <li style="display: inline; float: right;">
-        Bot Score: <?= $_botPoints ?>
+        Bot Score: <?= $game->getBotPoints() ?>
     </li>
     <li>
         Player Hand:
         <ul>
-            <?php foreach ($_playerHand as $card) { ?>
+            <?php foreach ($game->getPlayerHand() as $card) { ?>
                 <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
                 <img width="7%" src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="card" id="<?= $card->_identifier ?>">
             <?php } ?>
@@ -36,7 +30,7 @@ Layout::includeLayout('header');
     <li>
         Bot Hand:
         <ul>
-            <?php foreach ($_botHand as $card) { ?>
+            <?php foreach ($game->getBotHand() as $card) { ?>
                 <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
                 <img width="7%" src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="" id="<?= $card->_identifier ?>">
             <?php } ?>
@@ -45,7 +39,7 @@ Layout::includeLayout('header');
     <li>
         Deck:
         <ul>
-            <?php foreach ($_deck as $card) { ?>
+            <?php foreach ($game->getDeck() as $card) { ?>
                 <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
                 <img width="7%" src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="" id="<?= $card->_identifier ?>">
             <?php } ?>
