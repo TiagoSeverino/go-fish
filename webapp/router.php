@@ -26,18 +26,10 @@ Router::get('home/signup', 'HomeController/register');
 Router::post('home/signup', 'HomeController/doregister');
 Router::get('home/logout', 'HomeController/logout');
 
-Router::get('home/GoFish', 'HomeController/GoFish');
+
 Router::get('home/profile', 'HomeController/showProfile');
 Router::post('home/profile', 'HomeController/updateProfile');
 
 Router::get('home/stats', 'HomeController/showstats');
 
-
-
-
-
-
-
-
-
-/************** End of URLEncoder Routing Rules ************************************/
+Router::get('home/GoFish', 'TestController/index');

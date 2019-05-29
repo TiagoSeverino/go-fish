@@ -2,6 +2,65 @@
 use ArmoredCore\WebObjects\Asset;
 use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\URL;
-Layout::includeLayout('indexheader'); ?>
+use ArmoredCore\WebObjects\Data;
+$game = Data::get('game');
 
-<?php Layout::includeLayout('footer')?>
+Layout::includeLayout('header');
+//var_dump($game->_playerHand);
+$_playerHand = $game->_playerHand;
+$_botHand = $game->_botHand;
+$_playerPoints = $game->_playerPoints;
+$_botPoints = $game->_botPoints;
+$_playerTurn = $game->_playerTurn;
+$_deck = $game->_deck;
+
+?>
+
+<ul>
+    <li style="display: inline">
+        Player Score: <?php echo $_playerPoints; ?>
+    </li>
+    <li style="display: inline; float: right;">
+        Bot Score: <?= $_botPoints ?>
+    </li>
+    <li>
+        Player Hand:
+        <ul>
+            <?php foreach ($_playerHand->_hand as $card) { ?>
+                <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
+                <img src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="card" id="<?= $card->_identifier ?>">
+            <?php } ?>
+        </ul>
+    </li>
+    <li>
+        Bot Hand:
+        <ul>
+            <?php foreach ($_botHand->_hand as $card) { ?>
+                <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
+                <img src="<?=Asset::image('Cards/cardBack_green3.png')?>" class="" id="<?= $card->_identifier ?>">
+            <?php } ?>
+        </ul>
+    </li>
+    <li>
+        Deck:
+        <ul>
+            <?php foreach ($_deck->_deck as $card) { ?>
+                <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
+                <img src="<?=Asset::image('Cards/cardBack_green3.png')?>" class="" id="<?= $card->_identifier ?>">
+            <?php } ?>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    $( document ).ready(function() {
+        $('.card').click(function(){
+            alert($(this).attr('id'));
+        });
+    });
+</script>
+
+
+<?php
+Layout::includeLayout('footer')
+?>

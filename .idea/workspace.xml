@@ -2,14 +2,158 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7001a1a5-552a-4369-8b2d-3d517ff80e18" name="Default" comment="k">
-      <change afterPath="$PROJECT_DIR$/webapp/view/home/stats.phtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_blue1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_blue2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_blue3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_blue4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_blue5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_green1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_green2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_green3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_green4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_green5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_red1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_red2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_red3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_red4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardBack_red5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardC1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardC10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardC11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardC12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardC13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardC2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardC3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardC4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardC5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardC6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardC7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardC8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardC9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardD1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardD10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardD11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardD12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardD13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardD2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardD3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardD4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardD5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardD6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardD7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardD8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardD9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardH1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardH10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardH11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardH12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardH13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardH2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardH3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardH4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardH5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardH6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardH7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardH8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardH9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardJoker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardS1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardS10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardS11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardS12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardS13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardS2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardS3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardS4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardS5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardS6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardS7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardS8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/Cards/cardS9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_blue1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_blue2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_blue3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_blue4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_blue5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_green1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_green2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_green3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_green4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_green5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_red1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_red2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_red3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_red4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardBack_red5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardC9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardD9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardH9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Cards/cardS9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/controller/TestController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/model/Card.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/model/Deck.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/model/FishGameEngine.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/model/GoFishHandEvaluator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/model/GoFishHandEvaluatorInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webapp/model/Hand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/home/show.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/home/profile.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/home/signup.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/home/signup.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/home/GoFish.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/home/GoFish.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/home/index.haanga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/view/home/start.phtml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/view/layout/header.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/layout/header.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wlstudio/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/wlstudio/router.php" afterDir="false" />
     </list>
     <ignored path="PPAWS-MVC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,11 +201,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webapp/router.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            <state relative-caret-position="433">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -70,7 +214,7 @@
         <entry file="file://$PROJECT_DIR$/webapp/view/home/stats.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="293">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#6#39#0#PHP" expanded="true" />
                 <element signature="e#444#465#0#HTML" expanded="true" />
@@ -79,7 +223,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/view/home/profile.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="280">
@@ -95,7 +239,7 @@
         <entry file="file://$PROJECT_DIR$/wlstudio/view/book/index.phtml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="460">
-              <caret line="32" column="26" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="32" selection-end-column="26" />
+              <caret line="32" column="26" selection-start-line="21" selection-start-column="16" selection-end-line="32" selection-end-column="26" />
               <folding>
                 <element signature="e#6#38#0#PHP" expanded="true" />
               </folding>
@@ -199,12 +343,12 @@
         <option value="$PROJECT_DIR$/webapp/view/home/GoFish.phtml" />
         <option value="$PROJECT_DIR$/webapp/view/home/index.phtml" />
         <option value="$PROJECT_DIR$/wlstudio/router.php" />
-        <option value="$PROJECT_DIR$/webapp/router.php" />
         <option value="$PROJECT_DIR$/webapp/view/layout/header.phtml" />
         <option value="$PROJECT_DIR$/webapp/view/home/stats.phtml" />
         <option value="$PROJECT_DIR$/webapp/view/home/signup.phtml" />
         <option value="$PROJECT_DIR$/webapp/controller/HomeController.php" />
         <option value="$PROJECT_DIR$/webapp/view/home/profile.phtml" />
+        <option value="$PROJECT_DIR$/webapp/router.php" />
       </list>
     </option>
   </component>
@@ -269,7 +413,7 @@
       <path value="$PROJECT_DIR$/vendor/Symfony/contracts" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="125" />
     <option name="y" value="91" />
     <option name="width" value="1026" />
@@ -420,12 +564,12 @@
       <workItem from="1558535418787" duration="5863000" />
       <workItem from="1558688189304" duration="8329000" />
       <workItem from="1559038274151" duration="3620000" />
-      <workItem from="1559134263137" duration="8682000" />
+      <workItem from="1559134263137" duration="8941000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="404820000" />
+    <option name="totallyTimeSpent" value="405079000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -744,17 +888,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wlstudio/view/book/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
-          <caret line="32" column="26" lean-forward="true" selection-start-line="21" selection-start-column="16" selection-end-line="32" selection-end-column="26" />
+          <caret line="32" column="26" selection-start-line="21" selection-start-column="16" selection-end-line="32" selection-end-column="26" />
           <folding>
             <element signature="e#6#38#0#PHP" expanded="true" />
           </folding>
@@ -764,7 +901,7 @@
     <entry file="file://$PROJECT_DIR$/webapp/view/home/stats.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#6#39#0#PHP" expanded="true" />
             <element signature="e#444#465#0#HTML" expanded="true" />
@@ -796,6 +933,13 @@
           <folding>
             <element signature="e#6#38#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
         </state>
       </provider>
     </entry>
