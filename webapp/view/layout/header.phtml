@@ -48,10 +48,6 @@ $islogin = Data::get('islogin');
                         ?>
                         <li><a href="<?= URL::toRoute('home/index') ?>">Start Fishing</a></li>
                         <?php
-                    }else{
-                        ?>
-                        <li><a class="btn" href="<?= URL::toRoute('home/login') ?>">SIGN IN / SIGN UP</a></li>
-                        <?php
                     }
                 ?>
                 <li><a href="<?= URL::toRoute('home/stats') ?>">Stats</a></li>
