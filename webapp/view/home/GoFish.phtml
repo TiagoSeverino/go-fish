@@ -5,15 +5,13 @@ use ArmoredCore\WebObjects\URL;
 use ArmoredCore\WebObjects\Data;
 $game = Data::get('game');
 
-Layout::includeLayout('header');
-//var_dump($game->_playerHand);
-$_playerHand = $game->_playerHand->_hand;
-$_botHand = $game->_botHand->_hand;
-$_playerPoints = $game->_playerPoints;
-$_botPoints = $game->_botPoints;
-$_playerTurn = $game->_playerTurn;
-$_deck = $game->_deck->_deck;
+$_playerHand = $game->getPlayerHand();
+$_botHand = $game->getBotHand();
+$_playerPoints = $game->getPlayerPoints();
+$_botPoints = $game->getBotPoints();
+$_deck = $game->getDeck();
 
+Layout::includeLayout('header');
 ?>
 
 <ul>

@@ -20,8 +20,24 @@ class FishGameEngine {
         $this->_botHand = new Hand($this->_deck->dealCards($startingCardCount));
     }
 
+    public function getDeck() {
+        return $this->_deck->getDeck();
+    }
+
     public function getPlayerHand() {
         return $this->_playerHand->getHand();
+    }
+
+    public function getBotHand() {
+        return $this->_botHand->getHand();
+    }
+
+    public function getPlayerPoints() {
+        return $this->_botPoints;
+    }
+
+    public function getBotPoints() {
+        return $this->_botPoints;
     }
 
     public function addCardsToHand(array $cards) {
