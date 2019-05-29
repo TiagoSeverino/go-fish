@@ -28,7 +28,7 @@ Router::get('home/logout', 'HomeController/logout');
 
 Router::get('home/GoFish', 'TestController/index');
 Router::post('home/GoFish', 'TestController/play');
-Router::get('home/Reset', 'TestController/delete');///////////////////////////////////////////////
+Router::get('home/Reset', 'TestController/delete');
 
 Router::get('home/profile', 'HomeController/showProfile');
 Router::post('home/profile', 'HomeController/updateProfile');
