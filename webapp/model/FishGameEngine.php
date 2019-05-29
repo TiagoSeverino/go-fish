@@ -51,11 +51,11 @@ class FishGameEngine {
     }
         
     public function getBotCardCount() {
-        return count($this->_botHand->getHand());
+        return $this->_botHand->getHandSize();
     }
 
     public function getPlayerCardCount() {
-        return count($this->_playerHand->getHand());
+        return $this->_playerHand->getHandSize();
     }
 
     /**
