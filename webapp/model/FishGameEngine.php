@@ -3,12 +3,12 @@ use RedBeanPHP\Logger\RDefault\Debug;
 use Tracy\Debugger;
 
 class FishGameEngine {
-    public $_playerHand;
-    public $_botHand;
-    public $_playerPoints = 0;
-    public $_botPoints = 0;
-    public $_playerTurn = true;
-    public $_deck;
+    private $_playerHand;
+    private $_botHand;
+    private $_playerPoints = 0;
+    private $_botPoints = 0;
+    private $_playerTurn = true;
+    private $_deck;
 
     public function __construct(){
         $this->_deck = new Deck();
@@ -76,7 +76,12 @@ class FishGameEngine {
         for($i = 0; $i < ($this->getPlayerCardCount() - 3) && $this->getPlayerCardCount() > 3; $i++){
             if($this->getPlayerHand()[$i]->getValue() == $this->getPlayerHand()[$i + 3]->getValue()){
 
-                $sliced = array_splice($this->_playerHand->_hand, $i, 4);
+                $hand = $this->_playerHand->getHand();
+
+                $fish = array_splice($hand, $i, 4);
+
+                $this->_playerHand->removeCardsFromHand($fish);
+
                 $i = 0;
                 ++$this->_playerPoints;
 

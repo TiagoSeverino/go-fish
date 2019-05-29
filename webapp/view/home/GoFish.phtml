@@ -22,8 +22,8 @@ Layout::includeLayout('header');
         Player Hand:
         <ul>
             <?php foreach ($game->getPlayerHand() as $card) { ?>
-                <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
-                <img width="7%" src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="card" id="<?= $card->_identifier ?>">
+                <!-- <li style="display: inline"> <?= $card->getIdentifier() ?> </li> -->
+                <img width="7%" src="<?=Asset::image('Cards/card' . $card->getIdentifier() . '.png')?>" class="card" id="<?= $card->getIdentifier() ?>">
             <?php } ?>
         </ul>
     </li>
@@ -31,8 +31,8 @@ Layout::includeLayout('header');
         Bot Hand:
         <ul>
             <?php foreach ($game->getBotHand() as $card) { ?>
-                <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
-                <img width="7%" src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="" id="<?= $card->_identifier ?>">
+                <!-- <li style="display: inline"> <?= $card->getIdentifier() ?> </li> -->
+                <img width="7%" src="<?=Asset::image('Cards/card' . $card->getIdentifier() . '.png')?>" class="" id="<?= $card->getIdentifier() ?>">
             <?php } ?>
         </ul>
     </li>
@@ -40,8 +40,8 @@ Layout::includeLayout('header');
         Deck:
         <ul>
             <?php foreach ($game->getDeck() as $card) { ?>
-                <!-- <li style="display: inline"> <?= $card->_identifier ?> </li> -->
-                <img width="7%" src="<?=Asset::image('Cards/card' . $card->_identifier . '.png')?>" class="" id="<?= $card->_identifier ?>">
+                <!-- <li style="display: inline"> <?= $card->getIdentifier() ?> </li> -->
+                <img width="7%" src="<?=Asset::image('Cards/card' . $card->getIdentifier() . '.png')?>" class="" id="<?= $card->getIdentifier() ?>">
             <?php } ?>
         </ul>
     </li>

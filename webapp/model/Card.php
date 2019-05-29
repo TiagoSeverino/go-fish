@@ -2,7 +2,7 @@
 
 class Card {
 
-    public $_identifier;
+    private $_identifier;
     /**
      * Card constructor.
      */

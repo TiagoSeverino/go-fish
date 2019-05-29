@@ -9,7 +9,7 @@
 class Hand
 {
 
-    public $_hand = [];
+    private $_hand = [];
 
     /**
      * Hand constructor.

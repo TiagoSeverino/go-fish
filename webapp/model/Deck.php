@@ -8,7 +8,7 @@
  */
 class Deck
 {
-    public $_deck = [];
+    private $_deck = [];
     
     public function __construct()
     {
