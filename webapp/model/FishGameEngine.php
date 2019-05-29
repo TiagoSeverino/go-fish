@@ -12,7 +12,7 @@ class FishGameEngine {
 
     public function __construct(){
         $this->_deck = new Deck();
-        $this->initHands(4);
+        $this->initHands(7);
     }
 
     private function initHands($startingCardCount) {
@@ -38,6 +38,10 @@ class FishGameEngine {
         return count($this->_botHand->getHand());
     }
 
+    public function getPlayerCardCount() {
+        return count($this->_playerHand->getHand());
+    }
+
     /**
      * Recebe uma carta, procura na mão por cartas com o mesmo valor
      * remove-as caso existam e retorna um vetor com as cartas removidas
@@ -52,13 +56,14 @@ class FishGameEngine {
     }
 
     public function checkFish(){
-        //TODO: Corrigir esta merda
-        $playerCardCount = count($this->getPlayerHand());
-        if ($playerCardCount >= 4 ){
-            for($i = 0; $i < ($playerCardCount - 4); $i++){
-                if($this->_playerHand->_hand[$i]->getValue() == $this->_playerHand->_hand[$i + 3]->getValue()){
-                    Debugger::barDump(array_splice($this->_playerHand->_hand, $i, 3) , "Pi  ayer Fishes");
-                }
+
+        for($i = 0; $i < ($this->getPlayerCardCount() - 3) && $this->getPlayerCardCount() > 3; $i++){
+            if($this->getPlayerHand()[$i]->getValue() == $this->getPlayerHand()[$i + 3]->getValue()){
+
+                $sliced = array_splice($this->_playerHand->_hand, $i, 4);
+                $i = 0;
+                ++$this->_playerPoints;
+
             }
         }
     }
