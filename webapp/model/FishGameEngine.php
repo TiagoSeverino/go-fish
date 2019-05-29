@@ -12,7 +12,7 @@ class FishGameEngine {
 
     public function __construct(){
         $this->_deck = new Deck();
-        $this->initHands(20);
+        $this->initHands(4);
     }
 
     private function initHands($startingCardCount) {
@@ -43,10 +43,8 @@ class FishGameEngine {
     public function addCardsToHand(array $cards) {
         if ($this->_playerTurn) {
             $this->_playerHand->addCardsToHand($cards);
-            $this->_botHand->removeCardsFromHand($cards);
         } else {
             $this->_botHand->addCardsToHand($cards);
-            $this->_playerHand->removeCardsFromHand($cards);
         }
     }
         

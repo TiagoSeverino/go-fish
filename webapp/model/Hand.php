@@ -34,7 +34,7 @@ class Hand
 
         foreach($this->_hand as $cardInHand) {
             if ($cardInHand->getValue() == $card->getValue()) {
-                array_diff($this->_hand, [$cardInHand]);
+                $this->_hand = array_diff($this->_hand, [$cardInHand]);
             }
         }
     }
@@ -62,7 +62,7 @@ class Hand
      * @param Card $card
      * @return array
      */
-    public function askCardsInHand(Card $card) : array {
+    public function askCardsInHand(Card $card) {
         $result = [];
         foreach($this->_hand as $cardInHand) {
             if ($cardInHand->getValue() == $card->getValue()) {
