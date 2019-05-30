@@ -20,22 +20,22 @@ class Deck
 
         //load cards in _deck
         //for diamonds
-        for ($i = 2; $i <= 14; $i++){
+        for ($i = 1; $i <= 13; $i++){
             array_push($this->_deck, new Card('D' . $i));
         }
 
         //for clubs
-        for ($i = 2; $i <= 14; $i++){
+        for ($i = 1; $i <= 13; $i++){
             array_push($this->_deck, new Card('C' . $i));
         }
 
         //for hearts
-        for ($i = 2; $i <= 14; $i++){
+        for ($i = 1; $i <= 13; $i++){
             array_push($this->_deck, new Card('H' . $i));
         }
 
         //for spades
-        for ($i = 2; $i <= 14; $i++){
+        for ($i = 1; $i <= 13; $i++){
             array_push($this->_deck, new Card('S' . $i));
         }
     }
