@@ -64,7 +64,8 @@ Layout::includeLayout('header');
                 data: {
                     card:$(this).attr('id')//.replace(/\D/g,'')
                 },
-                success: function() {   
+                success: function(data) {  
+                    alert(data);
                     location.reload();  
                 }
             });

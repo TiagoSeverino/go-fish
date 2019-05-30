@@ -23,7 +23,7 @@ class TestController extends BaseController {
         }
 
         Debugger::barDump($game);
-        $game->checkFish();
+
         return View::make('home.GoFish', ['game' => $game]);
     }
 
@@ -55,6 +55,9 @@ class TestController extends BaseController {
                 Debugger::barDump($botCard, "Carta pedida pelo bot");
 
                 $botResult = $game->askForCard($botCard);
+
+                var_dump($botCard->getValue());
+                var_dump($botResult);
                 if (count($botResult) == 0) {
                     $newCard = $game->goFish();
 
@@ -66,8 +69,6 @@ class TestController extends BaseController {
                     $game->addCardsToHand($botResult);
                 }
             }
-
-            Session::set('game', $game);
         } else {
             $game->addCardsToHand($result);
         }
