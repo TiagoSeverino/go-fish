@@ -46,6 +46,8 @@ class FishGameEngine {
         } else {
             $this->_botHand->addCardsToHand($cards);
         }
+
+        $this->checkFish();
     }
         
     public function getBotCardCount() {
@@ -112,6 +114,8 @@ class FishGameEngine {
         } else {
             $this->_botHand->addCardsToHand([$card]);
         }
+
+        $this->checkFish();
 
         return $card;
     }
