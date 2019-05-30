@@ -58,6 +58,10 @@ class FishGameEngine {
         return $this->_playerHand->getHandSize();
     }
 
+    public function getDeckCardCount() {
+        return $this->_deck->getCurrentDeckSize();
+    }
+
     /**
      * Recebe uma carta, procura na mão por cartas com o mesmo valor
      * remove-as caso existam e retorna um vetor com as cartas removidas
