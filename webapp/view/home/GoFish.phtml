@@ -15,6 +15,9 @@ Layout::includeLayout('header');
     <li style="display: inline">
         Player Score: <?= $game->getPlayerPoints() ?>
     </li>
+    <li style="display: inline">
+        Is Finished: <?= $game->isFinished() ? 'true' : 'false' ?>
+    </li>
     <li style="display: inline; float: right;">
         Bot Score: <?= $game->getBotPoints() ?>
     </li>

@@ -54,6 +54,11 @@ class TestController extends BaseController {
                 $botCard = $game->makeBotPlay();
                 Debugger::barDump($botCard, "Carta pedida pelo bot");
 
+                if ($botCard == null){
+                    $botDone = true;
+                    continue;
+                }
+
                 $botResult = $game->askForCard($botCard);
 
                 var_dump($botCard->getValue());

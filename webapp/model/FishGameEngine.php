@@ -10,6 +10,7 @@ class FishGameEngine {
     private $_playerTurn = true;
     private $_deck;
     private $_startingCardCount;
+    private $_finished = false;
 
     public function __construct($startingCardCount = 4){
         $this->_startingCardCount = $startingCardCount;
@@ -63,6 +64,10 @@ class FishGameEngine {
 
     public function getDeckCardCount() {
         return $this->_deck->getCurrentDeckSize();
+    }
+
+    public function isFinished() {
+        return $this->_finished;
     }
 
     /**
@@ -123,6 +128,10 @@ class FishGameEngine {
             if ($deal != null)
                 $this->_botHand = new Hand($deal);
         }
+
+        if ($this->getPlayerCardCount() == 0 && $this->getBotCardCount() == 0){
+            $this->_finished = true;
+        }
     }
 
     public function goFish() {
@@ -146,7 +155,6 @@ class FishGameEngine {
     }
 
     public function makeBotPlay() {
-        if ($this->getBotCardCount() > 0)
-            return $this->getBotHand()[array_rand($this->getBotHand())];
+        return ($this->getBotCardCount() > 0) ? $this->getBotHand()[array_rand($this->getBotHand())] : null;
     }
 }
