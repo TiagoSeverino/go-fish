@@ -66,7 +66,7 @@ class TestController extends BaseController {
                 if (count($botResult) == 0) {
                     $newCard = $game->goFish();
 
-                    if($newCard->getValue() != $card->getValue()){
+                    if($newCard->getValue() != $botCard->getValue()){
                         $game->changeCurrentPlayer();
                         $botDone = true;
                     }
