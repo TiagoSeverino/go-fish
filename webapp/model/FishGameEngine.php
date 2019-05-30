@@ -9,15 +9,18 @@ class FishGameEngine {
     private $_botPoints = 0;
     private $_playerTurn = true;
     private $_deck;
+    private $_startingCardCount;
 
-    public function __construct(){
+    public function __construct($startingCardCount = 4){
+        $this->_startingCardCount = $startingCardCount;
+
         $this->_deck = new Deck();
-        $this->initHands(4);
+        $this->initHands();
     }
 
-    private function initHands($startingCardCount) {
-        $this->_playerHand = new Hand($this->_deck->dealCards($startingCardCount));
-        $this->_botHand = new Hand($this->_deck->dealCards($startingCardCount));
+    private function initHands() {
+        $this->_playerHand = new Hand($this->_deck->dealCards($this->_startingCardCount));
+        $this->_botHand = new Hand($this->_deck->dealCards($this->_startingCardCount));
     }
 
     public function getDeck() {
@@ -106,6 +109,20 @@ class FishGameEngine {
 
             }
         }
+
+        if ($this->getPlayerCardCount() == 0){
+            $deal = $this->_deck->dealCards($this->_startingCardCount);
+
+            if ($deal != null)
+                $this->_playerHand = new Hand($deal);
+        }
+
+        if ($this->getBotCardCount() == 0){
+            $deal = $this->_deck->dealCards($this->_startingCardCount);
+
+            if ($deal != null)
+                $this->_botHand = new Hand($deal);
+        }
     }
 
     public function goFish() {
@@ -129,6 +146,7 @@ class FishGameEngine {
     }
 
     public function makeBotPlay() {
-        return $this->getBotHand()[array_rand($this->getBotHand())];
+        if ($this->getBotCardCount() > 0)
+            return $this->getBotHand()[array_rand($this->getBotHand())];
     }
 }
