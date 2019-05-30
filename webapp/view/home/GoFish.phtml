@@ -35,7 +35,7 @@ Layout::includeLayout('header');
         <ul>
             <?php foreach ($game->getBotHand() as $card) { ?>
                 <!-- <li style="display: inline"> <?= $card->getIdentifier() ?> </li> -->
-                <img width="7%" src="<?=Asset::image('Cards/card' . $card->getIdentifier() . '.png')?>" class="" id="<?= $card->getIdentifier() ?>">
+                <img width="7%" src="<?=Asset::image( $game->isDebug() ? 'Cards/card' . $card->getIdentifier() . '.png' : 'Cards/cardBack_red4.png' )?>" class="" id="<?= $card->getIdentifier() ?>">
             <?php } ?>
         </ul>
     </li>
@@ -44,7 +44,7 @@ Layout::includeLayout('header');
         <ul>
             <?php foreach ($game->getDeck() as $card) { ?>
                 <!-- <li style="display: inline"> <?= $card->getIdentifier() ?> </li> -->
-                <img width="7%" src="<?=Asset::image('Cards/card' . $card->getIdentifier() . '.png')?>" class="" id="<?= $card->getIdentifier() ?>">
+                <img width="7%" src="<?=Asset::image( $game->isDebug() ? 'Cards/card' . $card->getIdentifier() . '.png' : 'Cards/cardBack_red4.png' )?>" class="" id="<?= $card->getIdentifier() ?>">
             <?php } ?>
         </ul>
     </li>
@@ -68,7 +68,7 @@ Layout::includeLayout('header');
                     card:$(this).attr('id')//.replace(/\D/g,'')
                 },
                 success: function(data) {  
-                    alert(data);
+                    <?= $game->isDebug() ? 'alert(data);' : ''?>
                     location.reload();  
                 }
             });
