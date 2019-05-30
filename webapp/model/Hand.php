@@ -36,6 +36,7 @@ class Hand
             if ($cardInHand->getValue() == $card->getValue()) {
                 $this->_hand = array_diff($this->_hand, [$cardInHand]);
             }
+            usort($this->_hand,  ['Card','cmp']);
         }
     }
 
