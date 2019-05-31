@@ -4,9 +4,8 @@ use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\Data;
 
 Layout::includeLayout('header');
-$options = array('limit' => 10, 'order' => 'numerovitorias desc');
-$users = Utilizadores::find('all',$options);
-//$users = Data::get('users');
+
+$users = Data::get('users');
 ?>
 
     <!-- container -->
