@@ -38,7 +38,7 @@ $islogin = Data::get('islogin');
         <div class="navbar-header">
             <!-- Button for smallest screens -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a class="navbar-brand" href="<?= URL::toRoute('home/index')?>"><img src="<?= Asset::image('logo.png')?>" alt="WEBlogic MVC"></a>
+            <a class="navbar-brand" href="<?= URL::toRoute('home/index')?>"><img src="<?= Asset::image('gofish6.png')?>" width="25%" alt="GoFish"></a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
@@ -46,7 +46,7 @@ $islogin = Data::get('islogin');
                 <?php
                     if($islogin === true){
                         ?>
-                        <li><a href="<?= URL::toRoute('home/index') ?>">Start Fishing</a></li>
+                        <li><a href="<?= URL::toRoute('home/GoFish') ?>">Start Fishing</a></li>
                         <?php
                     }
                 ?>

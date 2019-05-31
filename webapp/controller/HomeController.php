@@ -42,7 +42,7 @@ class HomeController extends BaseController
 
         if($user){
             Session::set('user', $user);
-            Redirect::toRoute('home/index');
+            Redirect::toRoute('home/GoFish');
         }
         else{
             Throw new Exception('Login Invalido');

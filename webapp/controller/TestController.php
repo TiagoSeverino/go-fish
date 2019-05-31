@@ -23,6 +23,7 @@ class TestController extends BaseController {
         }
 
         Debugger::barDump($game);
+
         if ($game->isFinished()){
             // adicionar 1 jogo a base de dados do jogador
             $user = Utilizadores::find(Session::get('user')->id);
@@ -35,7 +36,9 @@ class TestController extends BaseController {
             }
         }
 
-        return View::make('home.GoFish', ['game' => $game]);
+        $islogin = isset( $_SESSION['user']);
+
+        return View::make('home.GoFish', ['game' => $game,'islogin' => $islogin]);
     }
 
     function play(){
