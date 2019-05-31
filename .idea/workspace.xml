@@ -358,12 +358,12 @@
       <workItem from="1558688189304" duration="8329000" />
       <workItem from="1559038274151" duration="3620000" />
       <workItem from="1559134263137" duration="9628000" />
-      <workItem from="1559297631997" duration="1434000" />
+      <workItem from="1559297631997" duration="1759000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="407200000" />
+    <option name="totallyTimeSpent" value="407525000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -376,9 +376,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4955947" visible="true" weight="0.21633889" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4955947" visible="true" weight="0.21633889" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50440526" side_tool="true" weight="0.1933657" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.32975295" />
@@ -390,7 +389,7 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.33977455" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.33977455" />
       <window_info anchor="bottom" id="Application Servers" order="10" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32929516" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
