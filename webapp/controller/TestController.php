@@ -23,8 +23,9 @@ class TestController extends BaseController {
         }
 
         Debugger::barDump($game);
+        $islogin = isset( $_SESSION['user']);
 
-        return View::make('home.GoFish', ['game' => $game]);
+        return View::make('home.GoFish', ['game' => $game,'islogin' => $islogin]);
     }
 
     function play(){
