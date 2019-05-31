@@ -30,12 +30,13 @@ class TestController extends BaseController {
             // adicionar 1 jogo a base de dados do jogador
             $user = Utilizadores::find(Session::get('user')->id);
             $user->numerojogos++;
-            $user->save();
+
             if ($game->getPlayerPoints() > $game->getBotPoints()){
                 //se pontos jogador > pontos do bot adcionar 1 vitoria ao jogador na base de dados
                 $user->numerovitorias++;
-                $user->save();
             }
+
+            $user->save();
         }
 
         $islogin = isset( $_SESSION['user']);
