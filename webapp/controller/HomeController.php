@@ -149,7 +149,7 @@ class HomeController extends BaseController
 
         /* como selecionar os 10 primeiros users ordenados pelas vitorias a partir da base de dados
         $users = Utilizadores::find_by_sql("SELECT *"); */
-        $options = array('limit' => 10, 'order' => 'numerovitorias desc');
+        $options = array('limit' => 10, 'order' => 'numerovitorias desc, numerojogos asc');
         $users = Utilizadores::find('all',$options);
 
         return View::make('home.stats', ['islogin' => $islogin, 'users' => $users]);

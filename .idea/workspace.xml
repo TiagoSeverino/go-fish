@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7001a1a5-552a-4369-8b2d-3d517ff80e18" name="Default" comment="k">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webapp/controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/view/home/stats.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/view/home/stats.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/controller/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/controller/TestController.php" afterDir="false" />
     </list>
     <ignored path="PPAWS-MVC.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,14 +43,44 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webapp/controller/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="152" column="52" lean-forward="true" selection-start-line="152" selection-start-column="52" selection-end-line="152" selection-end-column="52" />
+            <state relative-caret-position="282">
+              <caret line="151" column="88" selection-start-line="151" selection-start-column="88" selection-end-line="151" selection-end-column="88" />
               <folding>
                 <element signature="e#6#49#0#PHP" expanded="true" />
                 <element signature="n#doregister#0;n#HomeController#0;n#!!top" />
                 <element signature="n#logout#0;n#HomeController#0;n#!!top" />
                 <element signature="n#GoFish#0;n#HomeController#0;n#!!top" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/model/Utilizadores.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/view/home/profile.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-560">
+              <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+              <folding>
+                <element signature="e#6#38#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webapp/controller/TestController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -105,8 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wlstudio/controller/HomeController.php" />
-        <option value="$PROJECT_DIR$/framework/ArmoredCore/ViewRenderer.php" />
         <option value="$PROJECT_DIR$/framework/ArmoredCore/LayoutManager.php" />
         <option value="$PROJECT_DIR$/wlstudio/startup/ArmoredConfig.php" />
         <option value="$PROJECT_DIR$/framework/ArmoredCore/MVCReflexion/MVCInspector.php" />
@@ -155,6 +184,8 @@
         <option value="$PROJECT_DIR$/webapp/router.php" />
         <option value="$PROJECT_DIR$/webapp/view/home/profile.phtml" />
         <option value="$PROJECT_DIR$/webapp/view/home/stats.phtml" />
+        <option value="$PROJECT_DIR$/webapp/model/FishGameEngine.php" />
+        <option value="$PROJECT_DIR$/webapp/controller/TestController.php" />
         <option value="$PROJECT_DIR$/webapp/controller/HomeController.php" />
       </list>
     </option>
@@ -250,6 +281,12 @@
               <item name="go-fish" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WEBlogicMVC" type="b2602c69:ProjectViewProjectNode" />
+              <item name="go-fish" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="WEBlogicMVC" type="b2602c69:ProjectViewProjectNode" />
@@ -372,12 +409,12 @@
       <workItem from="1558688189304" duration="8329000" />
       <workItem from="1559038274151" duration="3620000" />
       <workItem from="1559134263137" duration="9628000" />
-      <workItem from="1559297631997" duration="2103000" />
+      <workItem from="1559297631997" duration="4805000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="407869000" />
+    <option name="totallyTimeSpent" value="410571000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -392,7 +429,7 @@
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4955947" visible="true" weight="0.21633889" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4955947" visible="true" weight="0.21633889" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50440526" side_tool="true" weight="0.1933657" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.32975295" />
@@ -404,7 +441,7 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.33977455" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.33977455" />
       <window_info anchor="bottom" id="Application Servers" order="10" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32929516" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
@@ -450,20 +487,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/framework/ArmoredCore/WebObjects/URL.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/ArmoredCore/WebObjects/Redirect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/framework/ArmoredCore/Facades/Router.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -586,13 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/model/Utilizadores.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/view/home/login.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -602,16 +618,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/view/layout/footer.phtml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/view/home/GoFish.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-          <folding>
-            <element signature="e#6#39#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wlstudio/router.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -707,20 +713,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webapp/view/home/profile.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="28" column="85" selection-start-line="28" selection-start-column="78" selection-end-line="28" selection-end-column="85" />
-          <folding>
-            <element signature="e#6#38#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/view/home/signup.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="29" column="79" selection-start-line="29" selection-start-column="79" selection-end-line="29" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/model/Utilizadores.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/model/FishGameEngine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/view/home/GoFish.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#6#39#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/view/home/profile.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-560">
+          <caret line="8" column="42" lean-forward="true" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding>
+            <element signature="e#6#38#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -731,10 +761,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webapp/controller/TestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="33" column="30" lean-forward="true" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/webapp/controller/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="152" column="52" lean-forward="true" selection-start-line="152" selection-start-column="52" selection-end-line="152" selection-end-column="52" />
+        <state relative-caret-position="282">
+          <caret line="151" column="88" selection-start-line="151" selection-start-column="88" selection-end-line="151" selection-end-column="88" />
           <folding>
             <element signature="e#6#49#0#PHP" expanded="true" />
             <element signature="n#doregister#0;n#HomeController#0;n#!!top" />
