@@ -23,6 +23,19 @@ class TestController extends BaseController {
         }
 
         Debugger::barDump($game);
+
+        if ($game->isFinished()){
+            // adicionar 1 jogo a base de dados do jogador
+            $user = Utilizadores::find(Session::get('user')->id);
+            $user->numerojogos++;
+            $user->save();
+            if ($game->getPlayerPoints() > $game->getBotPoints()){
+                //se pontos jogador > pontos do bot adcionar 1 vitoria ao jogador na base de dados
+                $user->numerovitorias++;
+                $user->save();
+            }
+        }
+
         $islogin = isset( $_SESSION['user']);
 
         return View::make('home.GoFish', ['game' => $game,'islogin' => $islogin]);
