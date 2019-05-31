@@ -24,7 +24,9 @@ class TestController extends BaseController {
 
         Debugger::barDump($game);
 
-        if ($game->isFinished()){
+        if ($game->isFinished() && !$game->updatedDB()){
+            $game->updateDB();
+
             // adicionar 1 jogo a base de dados do jogador
             $user = Utilizadores::find(Session::get('user')->id);
             $user->numerojogos++;

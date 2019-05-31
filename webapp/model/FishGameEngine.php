@@ -12,6 +12,7 @@ class FishGameEngine {
     private $_startingCardCount;
     private $_finished = false;
     private $_debug = false;
+    private $_updatedDB = false;
 
     public function __construct($startingCardCount = 4){
         $this->_startingCardCount = $startingCardCount;
@@ -73,6 +74,14 @@ class FishGameEngine {
 
     public function isDebug() {
         return $this->_debug;
+    }
+
+    public function updatedDB() {
+        return $this->_updatedDB;
+    }
+
+    public function updateDB() {
+        $this->_updatedDB = true;
     }
 
     /**
