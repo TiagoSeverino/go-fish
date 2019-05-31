@@ -4,6 +4,7 @@ use ArmoredCore\WebObjects\Layout;
 use ArmoredCore\WebObjects\Data;
 
 Layout::includeLayout('header');
+
 $users = Data::get('users');
 ?>
 
@@ -28,16 +29,19 @@ $users = Data::get('users');
             <?php
                 $pos = 0;
                 foreach ($users as $user) {
-                    $pos++;?>
-
+                    ?>
             <tr>
+                    <?php $pos++;?>
+
                 <td><?=$pos?></td>
                 <td><?=$user->username?></td>
                 <td><?=$user->numerovitorias?></td>
             </tr>
-        </table>
+
             <?php
                 } ?>
+
+        </table>
 
 
 
