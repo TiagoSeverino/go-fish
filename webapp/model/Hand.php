@@ -83,5 +83,17 @@ class Hand
         return $this->_hand;
     }
 
+    public function checkFish(){
+        $points = 0;
 
+        for($i = 0; $i < ($this->getHandSize() - 3) && $this->getHandSize() > 3; $i++){
+            if($this->_hand[$i]->getValue() == $this->_hand[$i + 3]->getValue()){
+                $this->removeCardsByValue($this->_hand[$i]);
+
+                $i = 0;
+                ++$points;
+            }
+        }
+        return $points;
+    }
 }
