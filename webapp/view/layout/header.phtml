@@ -46,16 +46,16 @@ $islogin = Data::get('islogin');
                 <?php
                     if($islogin === true){
                         ?>
-                        <li><a href="<?= URL::toRoute('home/GoFish') ?>">Start Fishing</a></li>
+                        <li><a class="btn" href="<?= URL::toRoute('home/GoFish') ?>">START FISHING</a></li>
                         <?php
                     }
                 ?>
-                <li><a href="<?= URL::toRoute('home/stats') ?>">Stats</a></li>
+                <li><a class="btn" href="<?= URL::toRoute('home/stats') ?>">STATS</a></li>
                 <?php
                     if($islogin === true) {
                         ?>
-                        <li><a href="<?= URL::toRoute('home/profile') ?>">Show Profile</a></li>
-                        <li><a href="<?= URL::toRoute('home/logout') ?>">Log Out</a></li>
+                        <li><a class="btn" href="<?= URL::toRoute('home/profile') ?>">SHOW PROFILE</a></li>
+                        <li><a class="btn" href="<?= URL::toRoute('home/logout') ?>">LOG OUT</a></li>
                         <?php
                     }else {
                         ?>
