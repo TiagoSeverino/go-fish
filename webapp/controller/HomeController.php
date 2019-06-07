@@ -15,9 +15,13 @@ class HomeController extends BaseController
 {
 
     public function index(){
-        
+
         $islogin = isset( $_SESSION['user']);
-        return View::make('home.index', ['islogin' => $islogin]);
+        if($islogin == true){
+            Redirect::toRoute('home/GoFish');
+        }else {
+            Redirect::toRoute('home/login');
+        }
     }
 
     public function start(){
