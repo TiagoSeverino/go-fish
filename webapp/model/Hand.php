@@ -23,6 +23,7 @@ class Hand
     /**
      * @param array $hand
      */
+    //define e ordena as cartas d mão
     public function setHand(array $hand)
     {
         $this->_hand = $hand;
@@ -30,16 +31,17 @@ class Hand
     }
 
     public function removeCardsByValue(Card $card){
-        // TODO: Remove as cartas da mão que tenham o mesmo valor que a carta passada como parâmetro
+        //Remove as cartas da mão que tenham o mesmo valor que a carta passada como parâmetro
 
         foreach($this->_hand as $cardInHand) {
             if ($cardInHand->getValue() == $card->getValue()) {
                 $this->_hand = array_diff($this->_hand, [$cardInHand]);
             }
-            usort($this->_hand,  ['Card','cmp']);
+            usort($this->_hand,  ['Card','cmp']);//para evitar que existam posições vazias ou nulas no array
         }
     }
 
+    //adiciona cartas à mão
     public function addCardsToHand(array $cards) {
         $this->_hand = array_merge($this->_hand, $cards);
         usort($this->_hand,  ['Card','cmp']);
@@ -86,11 +88,12 @@ class Hand
     public function checkFish(){
         $points = 0;
 
-        for($i = 0; $i < ($this->getHandSize() - 3) && $this->getHandSize() > 3; $i++){
+        // 
+        for($i = 0; $i < ($this->getHandSize() - 3); $i++){
             if($this->_hand[$i]->getValue() == $this->_hand[$i + 3]->getValue()){
                 $this->removeCardsByValue($this->_hand[$i]);
 
-                $i = 0;
+                $i = -1;
                 ++$points;
             }
         }
