@@ -1,0 +1,56 @@
+<?php
+use ArmoredCore\WebObjects\Asset;
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\URL;
+use ArmoredCore\WebObjects\Data;
+
+$game = Data::get('game');
+$won = Data::get('won');
+
+Layout::includeLayout('header');
+?>
+
+<div class="modal fade" id="endmodal" tabindex="-1" role="dialog" aria-labelledby="endDialogLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="removeDialoglLabel">Game Finished (<?= $game->getPlayerPoints() ?>-<?= $game->getBotPoints() ?>)</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+                <?= $won ? 'Congratulations, you won the game! <i class="fa fa-thumbs-up"></i>' : 'You lost the game, good luck next time! <i class="fa fa-thumbs-down"></i>' ?>    
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">New Game</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	window.addEventListener('load', function() {
+		$( document ).ready(function() {
+            $('#endmodal').modal();
+
+			var audio = new Audio('<?=Asset::image( $won ? 'win.mp3' : 'lose.mp3')?>');
+			audio.play();
+
+            $('#endmodal').on('hidden.bs.modal', function () {
+				$.ajax({
+					type: "GET",
+					url: "Reset",
+					success: function(data) {  
+						location.reload();  
+					}
+				});
+			});
+		});
+	}, false);
+</script>
+
+
+<?php
+Layout::includeLayout('footer')
+?>

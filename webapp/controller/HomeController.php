@@ -150,7 +150,13 @@ class HomeController extends BaseController
 
         $islogin = isset( $_SESSION['user']);
 
-        return View::make('home.GoFish', ['game' => $game,'islogin' => $islogin]);
+        if ($game->isFinished()){
+            return View::make('home.GameFinished', ['game' => $game, 'won' => ($game->getPlayerPoints() > $game->getBotPoints())]);
+        }
+        else
+        {
+            return View::make('home.GoFish', ['game' => $game,'islogin' => $islogin]);
+        }
     }
 
     function play(){

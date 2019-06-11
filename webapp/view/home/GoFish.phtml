@@ -10,28 +10,11 @@ Layout::includeLayout('header');
 
 
 <div class="container">
-	<div class="row">
-		<div class="row col-12">
-			<ul>
-				<li>
-					<a href="<?=Url::toRoute('home/Reset')?>">Reset</a>
-				</li>
-				<li>
-					Player Score: <?= $game->getPlayerPoints() ?>
-				</li>
-				<li>
-					Is Finished: <?= $game->isFinished() ? 'true' : 'false' ?>
-				</li>
-				<li>
-					Bot Score: <?= $game->getBotPoints() ?>
-				</li>
-			</ul>
-		</div>
-
-
+	<div class="row mt-2">
 		<li>
-			Player Hand:
+			Player (<?= $game->getPlayerPoints() ?> Points):
 		</li>
+		<a class="btn btn-dark ml-auto" href="<?=Url::toRoute('home/Reset')?>">Reset</a>
 		<div class="row col-12">
 			<?php foreach ($game->getPlayerHand() as $card) { ?>
 				<div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3 _card">
@@ -42,7 +25,7 @@ Layout::includeLayout('header');
 
 
 		<li>
-			Bot Hand:
+			Bot (<?= $game->getBotPoints() ?> Points):
 		</li>
 		<div class="row col-12">
 			<?php foreach ($game->getBotHand() as $card) { ?>
@@ -62,6 +45,25 @@ Layout::includeLayout('header');
 					<img src="<?=Asset::image( $game->isDebug() ? 'Cards/card' . $card->getIdentifier() . '.png' : 'Cards/cardBack_red4.png' )?>" alt="Deck Cards">
 				</div>
 			<?php } ?>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="endmodal" tabindex="-1" role="dialog" aria-labelledby="endDialogLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="removeDialoglLabel">Game Finished</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				Congratulations, you won the game!
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">New Game</button>
+			</div>
 		</div>
 	</div>
 </div>
