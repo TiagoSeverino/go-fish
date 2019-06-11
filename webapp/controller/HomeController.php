@@ -120,9 +120,11 @@ class HomeController extends BaseController
 
     function showgame() {
 
+        //Create new game engine
+        $game = new FishGameEngine(Session::get('user')->cartasiniciais);
+
         if(!isset($_SESSION['game'])){
-            $this-newgame();
-            return;
+            Session::set('game', $game);
         }
 
         $game = Session::get('game');
