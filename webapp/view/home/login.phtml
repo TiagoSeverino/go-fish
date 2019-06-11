@@ -2,59 +2,42 @@
 
 Layout::includeLayout('header') ?>
 
-	<!-- container -->
-	<div class="container">
 
-		<ol class="breadcrumb">
-			<li><a href="index.html">Home</a></li>
-			<li class="active">User access</li>
-		</ol>
 
-		<div class="row">
-			
-			<!-- Article main content -->
-			<article class="col-xs-12 maincontent">
-				<header class="page-header">
-					<h1 class="page-title">Sign in</h1>
-				</header>
-				
-				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h3 class="thin text-center">Sign in to your account</h3>
-                            <p class="text-center text-muted">Or click here, <a href="signup">Register</a>, to create a new one</p>
-							<hr>
-							
-							<form method="post">
-								<div class="top-margin">
-									<label>Username/Email <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" name="Username">
-								</div>
-								<div class="top-margin">
-									<label>Password <span class="text-danger">*</span></label>
-									<input type="password" class="form-control" name="Password">
-								</div>
+    <body>
+    <div id="login">
+        <br>
+        <h4 class="thin text-center">Sign in to your account</h4>
+        <p class="text-center text-muted">Or click <a href="signup">HERE</a>, to create a new one</p>
+        <br>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form method="post">
+                            <div class="top-margin">
+                                <label>Username/Email <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="Username">
+                            </div>
+                            <div class="top-margin">
+                                <label>Password <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" name="Password">
+                            </div>
 
-								<hr>
+                            <br>
 
-								<div class="row">
-									<div class="col-lg-8">
-										<b><a href="">Forgot password?</a></b>
-									</div>
-									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Sign in</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
+                            <div class="col-lg-12 text-right">
+                                <button class="btn btn-action" type="submit">Sign in</button>
+                            </div>
+                        </form>
 
-				</div>
-				
-			</article>
-			<!-- /Article -->
+                    <br><hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
 
-		</div>
-	</div>	<!-- /container -->
 
 <?php Layout::includeLayout('footer') ?>
