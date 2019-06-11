@@ -7,65 +7,44 @@ $islogin = Data::get('islogin');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
+<html lang="pt-PT">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+		<title>GoFish</title>
+		
+		<!-- Font Ubuntu Mono -->
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
 
-    <title>Go Fish</title>
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <?=AssetBundler::css()?>
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+		<!-- Stylesheet -->
+		<link rel="stylesheet" type="text/css" href="<?= Asset::css('styles.css')?>">
+	</head>
+	<body>
+		<!-- Navbar -->
+		<header> 
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" >GoFish</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				</button>
 
-    <link rel="shortcut icon" href="<?= Asset::image('gt_favicon.png')?>">
-    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-    <!-- Custom styles for our site template -->
-    <link rel="stylesheet" href="<?= Asset::css('/bootstrap-theme.css')?>" media="screen" >
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="<?= Asset::js('html5shiv.js')?>"></script>
-    <script src="<?= Asset::js('respond.min.js')?>"></script>
-    <![endif]-->
-</head>
-
-<body class="home">
-<!-- Fixed navbar -->
-<div class="navbar navbar-inverse navbar-fixed-top headroom" >
-    <div class="container">
-        <div class="navbar-header">
-            <!-- Button for smallest screens -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a class="navbar-brand" href="<?= URL::toRoute('home/index')?>"><img src="<?= Asset::image('gofish6.png')?>" width="25%" alt="GoFish"></a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav pull-right">
-
-                <?php
-                    if($islogin === true){
-                        ?>
-                        <li><a class="btn" href="<?= URL::toRoute('home/GoFish') ?>">START FISHING</a></li>
-                        <?php
-                    }
-                ?>
-                <li><a class="btn" href="<?= URL::toRoute('home/stats') ?>">STATS</a></li>
-                <?php
-                    if($islogin === true) {
-                        ?>
-                        <li><a class="btn" href="<?= URL::toRoute('home/profile') ?>">SHOW PROFILE</a></li>
-                        <li><a class="btn" href="<?= URL::toRoute('home/logout') ?>">LOG OUT</a></li>
-                        <?php
-                    }else {
-                        ?>
-                        <li><a class="btn" href="<?= URL::toRoute('home/login') ?>">SIGN IN / SIGN UP</a></li>
-                        <?php
-                    }
-                ?>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</div>
-<!-- /.navbar -->
-<header id="head" class="secondary"></header>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a href="<?=Url::toRoute('home/login')?>" class="nav-link">Play</a>
+						</li>
+						<li class="nav-item">
+							<a href="<?=Url::toRoute('home/login')?>" class="nav-link">Login</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>

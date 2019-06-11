@@ -49,7 +49,7 @@ class TestController extends BaseController {
         Debugger::barDump($game);
 
         //Ask one card
-        $card = new Card(Post::get('card'));
+        $card = new Card('C' . Post::get('card'));
         $result = $game->askForCard($card);
         Debugger::barDump($card, "Carta");
         Debugger::barDump($result, "Carta pedida");
@@ -104,6 +104,6 @@ class TestController extends BaseController {
         $game = new FishGameEngine();
         Session::set('game', $game);
 
-        Redirect::toRoute('home/GoFish');
+        Redirect::toRoute('home/gofish');
     }
 }

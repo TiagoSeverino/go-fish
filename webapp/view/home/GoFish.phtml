@@ -8,81 +8,89 @@ $game = Data::get('game');
 Layout::includeLayout('header');
 ?>
 
-<ul>
-    <li>
-        <a href="<?=Url::toRoute('home/Reset')?>">Reset</a>
-    </li>
-    <li style="display: inline">
-        Player Score: <?= $game->getPlayerPoints() ?>
-    </li>
-    <li style="display: inline">
-        Is Finished: <?= $game->isFinished() ? 'true' : 'false' ?>
-    </li>
-    <li style="display: inline; float: right;">
-        Bot Score: <?= $game->getBotPoints() ?>
-    </li>
-    <div class="row"></div>
-    <li>
-        Player Hand:
-        <ul>
-            <?php foreach ($game->getPlayerHand() as $card) { ?>
-                <div class="col-md-1 col-xs-3">
-                    <!-- <li style="display: inline"> <?= $card->getIdentifier() ?> </li> -->
-                    <img src="<?=Asset::image('Cards/card' . $card->getIdentifier() . '.png')?>" class="card" id="<?= $card->getIdentifier() ?>">
-                </div>
-            <?php } ?>
-        </ul>
-    </li>
-    <div class="row"></div>
-    <li>
-        Bot Hand:
-        <ul>
-            <?php foreach ($game->getBotHand() as $card) { ?>
-                <div class="col-md-1 col-xs-3">
-                    <!-- <li style="display: inline"> <?= $card->getIdentifier() ?> </li> -->
-                    <img src="<?=Asset::image( $game->isDebug() ? 'Cards/card' . $card->getIdentifier() . '.png' : 'Cards/cardBack_red4.png' )?>" class="" id="<?= $card->getIdentifier() ?>">
-                </div>
-            <?php } ?>
-        </ul>
-    </li>
-    <div class="row"></div>
-    <li>
-        Deck:
-        <ul>
-            <?php foreach ($game->getDeck() as $card) { ?>
-                <div class="col-md-1 col-xs-3">
-                    <!-- <li style="display: inline"> <?= $card->getIdentifier() ?> </li> -->
-                    <img src="<?=Asset::image( $game->isDebug() ? 'Cards/card' . $card->getIdentifier() . '.png' : 'Cards/cardBack_red4.png' )?>" class="" id="<?= $card->getIdentifier() ?>">
-                </div>
-            <?php } ?>
-        </ul>
-    </li>
-</ul>
+
+<div class="container">
+	<div class="row">
+		<div class="row col-12">
+			<ul>
+				<li>
+					<a href="<?=Url::toRoute('home/Reset')?>">Reset</a>
+				</li>
+				<li>
+					Player Score: <?= $game->getPlayerPoints() ?>
+				</li>
+				<li>
+					Is Finished: <?= $game->isFinished() ? 'true' : 'false' ?>
+				</li>
+				<li>
+					Bot Score: <?= $game->getBotPoints() ?>
+				</li>
+			</ul>
+		</div>
+
+
+		<li>
+			Player Hand:
+		</li>
+		<div class="row col-12">
+			<?php foreach ($game->getPlayerHand() as $card) { ?>
+				<div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3 _card">
+					<img class="player-card" src="<?=Asset::image('Cards/card' . $card->getIdentifier() . '.png')?>" alt="<?= $card->getIdentifier() ?>" data-card="<?= $card->getValue() ?>">
+				</div>
+			<?php } ?>
+		</div>
+
+
+		<li>
+			Bot Hand:
+		</li>
+		<div class="row col-12">
+			<?php foreach ($game->getBotHand() as $card) { ?>
+				<div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3 _card">
+					<img src="<?=Asset::image( $game->isDebug() ? 'Cards/card' . $card->getIdentifier() . '.png' : 'Cards/cardBack_red4.png' )?>" alt="Bot Card">
+				</div>
+			<?php } ?>
+		</div>
+
+
+		<li>
+			Deck:
+		</li>
+		<div class="row col-12">
+			<?php foreach ($game->getDeck() as $card) { ?>
+				<div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3 _card">
+					<img src="<?=Asset::image( $game->isDebug() ? 'Cards/card' . $card->getIdentifier() . '.png' : 'Cards/cardBack_red4.png' )?>" alt="Deck Cards">
+				</div>
+			<?php } ?>
+		</div>
+	</div>
+</div>
 
 <script>
-    $( document ).ready(function() {
-        let canPlay = true;
+	window.addEventListener('load', function() {
+		$( document ).ready(function() {
+			let canPlay = true;
 
-        $('.card').click(function(){
-            if (canPlay == false){
-                return;
-            }
-            canPlay = false;
-            //alert($(this).attr('id'));
+			$('.player-card').click(function(){
+				if (canPlay == false){
+					return;
+				}
+				canPlay = false;
 
-            $.ajax({
-                type: "POST",
-                url: "GoFish",
-                data: {
-                    card:$(this).attr('id')//.replace(/\D/g,'')
-                },
-                success: function(data) {  
-                    <?= $game->isDebug() ? 'alert(data);' : ''?>
-                    location.reload();  
-                }
-            });
-        });
-    });
+				$.ajax({
+					type: "POST",
+					url: "gofish",
+					data: {
+						card: $(this).data('card')
+					},
+					success: function(data) {  
+						<?= $game->isDebug() ? 'alert(data);' : ''?>
+						location.reload();  
+					}
+				});
+			});
+		});
+	}, false);
 </script>
 
 

@@ -1,0 +1,30 @@
+body {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+._card{
+    display: inline-block;
+}
+
+._card img{
+	opacity: 1;
+	-webkit-transition: opacity .2s ease-in;
+	-moz-transition: opacity .2s ease-in;
+	-o-transition: opacity .2s ease-in;
+	-ms-transition: opacity .2s ease-in;
+    transition: opacity .2s ease-in;
+
+    transition: transform .2s;
+
+    box-shadow: 2px 1px 5px rgba(0,0,0,0.15);
+    transition: box-shadow 0.2s ease-in-out;
+
+    width: 100%;
+}
+
+._card:hover > .player-card{
+    opacity: 0.8;
+    transform: scale(1.1);
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}

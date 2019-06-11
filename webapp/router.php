@@ -12,12 +12,8 @@ use ArmoredCore\Facades\Router;
  *  Use convention: controllerName@methodActionName
  ****************************************************************************/
 
-Router::get('/',			'HomeController/index');
-Router::get('home/',		'HomeController/index');
-Router::get('home/index',	'HomeController/index');
-Router::get('home/start',	'HomeController/start');
-Router::get('home/about', 'HomeController/about');
-Router::post('home/index', 'HomeController/index');
+Router::get('/', 'HomeController/index');
+Router::get('home/', 'HomeController/index');
 
 Router::get('home/login', 'HomeController/login');
 Router::post('home/login', 'HomeController/dologin');
@@ -26,11 +22,11 @@ Router::get('home/signup', 'HomeController/register');
 Router::post('home/signup', 'HomeController/doregister');
 Router::get('home/logout', 'HomeController/logout');
 
-Router::get('home/GoFish', 'TestController/index');
-Router::post('home/GoFish', 'TestController/play');
+Router::get('home/gofish', 'TestController/index');
+Router::post('home/gofish', 'TestController/play');
 Router::get('home/Reset', 'TestController/delete');
 
 Router::get('home/profile', 'HomeController/showProfile');
 Router::post('home/profile', 'HomeController/updateProfile');
 
-Router::get('home/stats', 'HomeController/showstats');
+Router::get('home/stats', 'HomeController/stats');
