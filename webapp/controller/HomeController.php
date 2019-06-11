@@ -220,4 +220,19 @@ class HomeController extends BaseController
 
         Redirect::toRoute('home/index');
     }
+
+    public function admin() {
+        $islogin = isset( $_SESSION['user']);
+
+        if ($islogin && Session::get('user')->isadmin){
+            return View::make('home.admin', ['islogin' => $islogin, 'users' => Utilizadores::all()]);
+        }else{
+            Redirect::toRoute('home/index');
+        }
+
+
+
+    }
+
+
 }

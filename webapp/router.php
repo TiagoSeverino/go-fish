@@ -30,3 +30,4 @@ Router::get('home/profile', 'HomeController/showProfile');
 Router::post('home/profile', 'HomeController/updateProfile');
 
 Router::get('home/stats', 'HomeController/stats');
+Router::get('home/admin', 'HomeController/admin');

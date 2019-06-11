@@ -3,7 +3,9 @@ use ArmoredCore\WebObjects\Asset;
 use ArmoredCore\Facades\AssetBundler;
 use ArmoredCore\WebObjects\URL;
 use ArmoredCore\WebObjects\Data;
+
 $islogin = Data::get('islogin');
+$isadmin = Data::get('isadmin');
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +40,13 @@ $islogin = Data::get('islogin');
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
-                        <?php if($islogin === true){ ?>
+                        <?php if($isadmin == true){?>
+                        <li class="nav-item">
+                            <a href="<?=Url::toRoute('home/admin')?>" class="nav-link" style="color: red">Admin</a>
+                        </li>
+                        <?php } ?>
+
+                        <?php if($islogin == true){ ?>
 							<li class="nav-item">
 								<a href="<?=Url::toRoute('home/index')?>" class="nav-link">Play</a>
 							</li>
@@ -46,7 +54,7 @@ $islogin = Data::get('islogin');
 						<li class="nav-item">
 							<a href="<?=Url::toRoute('home/stats')?>" class="nav-link">Stats</a>
 						</li>
-                        <?php if($islogin === true) { ?>
+                        <?php if($islogin == true) { ?>
 							<li class="nav-item">
 								<a href="<?=Url::toRoute('home/profile')?>" class="nav-link">Profile</a>
 							</li>
