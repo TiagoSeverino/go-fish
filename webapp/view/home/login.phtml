@@ -1,6 +1,13 @@
-<?php use ArmoredCore\WebObjects\Layout;
+<?php
 
-Layout::includeLayout('header') ?>
+use ArmoredCore\WebObjects\Layout;
+use ArmoredCore\WebObjects\Data;
+
+Layout::includeLayout('header');
+
+$valid = Data::get('valid');
+
+?>
 
 
 
@@ -14,6 +21,14 @@ Layout::includeLayout('header') ?>
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
+                        <?php if (!$valid) { ?>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                Login Invalido!
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <?php } ?>
                         <form method="post">
                             <div class="top-margin">
                                 <label>Username/Email <span class="text-danger">*</span></label>
