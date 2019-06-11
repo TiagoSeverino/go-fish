@@ -18,6 +18,10 @@ class HomeController extends BaseController
         return isset( $_SESSION['user']);
     }
 
+    public function isAdmin(){
+        return ($this->isLoggedIn() && Session::get('user')->isadmin == 1);
+    }
+
     public function index(){
         if( $this->isLoggedIn() ){
             $this->showgame();
@@ -82,7 +86,7 @@ class HomeController extends BaseController
     }
 
     public function showProfile(){
-        return View::make('home.profile', ['utilizador' => Session::get('user'), 'islogin' =>  $this->isLoggedIn() ]);
+        return View::make('home.profile', ['utilizador' => Session::get('user'), 'islogin' =>  $this->isLoggedIn(), 'isadmin' => $this->isAdmin() ]);
     }
 
     public function updateProfile(){
@@ -110,7 +114,7 @@ class HomeController extends BaseController
         $options = array('limit' => 10, 'order' => 'numerovitorias desc, numerojogos asc');
         $users = Utilizadores::find('all',$options);
 
-        return View::make('home.stats', ['islogin' =>  $this->isLoggedIn() , 'users' => $users]);
+        return View::make('home.stats', ['islogin' =>  $this->isLoggedIn(), 'users' => $users, 'isadmin' => $this->isAdmin(), ]);
 
     }
 
@@ -149,7 +153,7 @@ class HomeController extends BaseController
         }
         else
         {
-            return View::make('home.GoFish', ['game' => $game,'islogin' =>  $this->isLoggedIn()]);
+            return View::make('home.GoFish', ['game' => $game,'islogin' =>  $this->isLoggedIn(), 'isadmin' => $this->isAdmin()]);
         }
     }
 
@@ -217,8 +221,8 @@ class HomeController extends BaseController
     }
 
     public function admin() {
-        if ( $this->isLoggedIn() && Session::get('user')->isadmin){
-            return View::make('home.admin', ['islogin' => $this->isLoggedIn(), 'users' => Utilizadores::all()]);
+        if ( $this->isAdmin() ){
+            return View::make('home.admin', ['islogin' => $this->isLoggedIn(), 'isadmin' => $this->isAdmin(), 'users' => Utilizadores::all()]);
         }else{
             Redirect::toRoute('home/index');
         }
