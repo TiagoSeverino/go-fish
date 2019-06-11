@@ -147,7 +147,7 @@ class HomeController extends BaseController
         }
 
         if ($game->isFinished()){
-            return View::make('home.GameFinished', ['game' => $game, 'won' => ($game->getPlayerPoints() > $game->getBotPoints())]);
+            return View::make('home.GameFinished', ['game' => $game, 'won' => ($game->getPlayerPoints() > $game->getBotPoints()),'islogin' =>  $this->isLoggedIn(), 'isadmin' => $this->isAdmin()]);
         }
         else
         {
