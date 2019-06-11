@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2019 at 12:26 AM
+-- Generation Time: Jun 12, 2019 at 12:30 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.0.33
 
@@ -39,7 +39,7 @@ CREATE TABLE `utilizadores` (
   `numerovitorias` int(11) NOT NULL DEFAULT '0',
   `isadmin` tinyint(1) NOT NULL DEFAULT '0',
   `isbanned` tinyint(1) NOT NULL DEFAULT '0',
-  `cartasiniciais` int(11) NOT NULL DEFAULT '4'
+  `cartasiniciais` int(11) NOT NULL DEFAULT '7'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
