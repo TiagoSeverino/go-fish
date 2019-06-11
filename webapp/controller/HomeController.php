@@ -74,7 +74,7 @@ class HomeController extends BaseController
                 Session::set('user', $utilizador);
                 Redirect::toRoute('home/index');
             }else{
-                Throw new Exception('Conta inválida');
+                Redirect::toRoute('home/signup');
             }
         }
     }
