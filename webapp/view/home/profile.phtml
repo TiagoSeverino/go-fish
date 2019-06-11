@@ -22,6 +22,7 @@ Layout::includeLayout('header') ?>
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
                         <form method="post">
+                            <input readonly="true" type="hidden" class="form-control" name="id" value="<?=$utilizador->id?>">
                             <div class="top-margin">
                                 <label>Username <span class="text-danger">*</span></label>
                                 <input readonly="true" type="text" class="form-control" name="username" value="<?=$utilizador->username?>">
@@ -42,10 +43,20 @@ Layout::includeLayout('header') ?>
                                 <label>E-mail <span class="text-danger">*</span></label>
                                 <input type="text" name="email" class="form-control" value="<?=$utilizador->email?>">
                             </div>
-                            <?php if($isadmin == true){ ?>
+                            <?php if($isadmin === true){ ?>
                                 <div class="top-margin">
                                     <label>Initial Hand Cards <span class="text-danger">*</span></label>
-                                    <input type="text" name="cartasiniciais" class="form-control" value="<?=$utilizador->cartasiniciais?>">
+                                    <input type="number" name="cartasiniciais" class="form-control" value="<?=$utilizador->cartasiniciais?>">
+                                </div>
+                                <div class="top-margin">
+                                    <label>Is Banned <span class="text-danger">*</span></label> <br />
+                                    <input type="radio" name="isbanned" value="0" <?= ($utilizador->isbanned == 0) ? 'checked' : '' ?> > No<br />
+                                    <input type="radio" name="isbanned" value="1" <?= ($utilizador->isbanned != 0) ?    'checked' : '' ?> > Yes<br />
+                                </div>
+                                <div class="top-margin">
+                                    <label>Is Admin <span class="text-danger">*</span></label> <br />
+                                    <input type="radio" name="isadmin" value="0" <?= ($utilizador->isadmin == 0) ? 'checked' : '' ?> > No<br />
+                                    <input type="radio" name="isadmin" value="1" <?= ($utilizador->isadmin != 0) ?    'checked' : '' ?> > Yes<br />
                                 </div>
                             <?php } ?>
                             <br>

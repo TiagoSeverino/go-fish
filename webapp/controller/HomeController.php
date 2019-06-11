@@ -227,4 +227,22 @@ class HomeController extends BaseController
             Redirect::toRoute('home/index');
         }
     }
+
+    public function edit($id){
+        return View::make('home.profile', ['utilizador' => Utilizadores::find($id), 'islogin' =>  $this->isLoggedIn(), 'isadmin' => $this->isAdmin() ]);
+    }
+
+    public function doedit($id){
+        if ( $this->isAdmin() ){
+            $utilizador = Utilizadores::find($id);
+            $utilizador->update_attributes(Post::getAll());
+
+            if($utilizador->is_valid()){
+                $utilizador->save();
+                Redirect::toRoute('home/admin');
+            } else {
+                Redirect::toRoute('home/edit/' . $id);
+            }
+        }
+    }
 }
