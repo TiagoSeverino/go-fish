@@ -15,30 +15,29 @@ $users = Data::get('users');
 
 
 
-        <table class="table">
+        <table class="table table-striped table-hover">
             <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Username</th>
-                <th scope="col">Wins</th>
-                <th scope="col">Games</th>
-            </tr>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Wins</th>
+                    <th scope="col">Games</th>
+                </tr>
             </thead>
-            <?php
-                $pos = 0;
-                foreach ($users as $user) {
-            ?>
             <tbody>
-            <tr>
-                <?php $pos++;?>
-                <th scope="row"><?=$pos?></th>
-                <td><?=$user->username?></td>
-                <td><?=$user->numerovitorias?></td>
-                <td><?=$user->numerojogos?></td>
-            </tr>
+                <?php
+                    $pos = 0;
+                    foreach ($users as $user) {
+                ?>
+                    <tr>
+                        <?php $pos++;?>
+                        <th scope="row"><?=$pos?></th>
+                        <td><?=$user->username?></td>
+                        <td><?=$user->numerovitorias?></td>
+                        <td><?=$user->numerojogos?></td>
+                    </tr>
+                <?php } ?>
             </tbody>
-            <?php
-                } ?>
         </table>
 
 

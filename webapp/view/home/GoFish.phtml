@@ -15,7 +15,8 @@ Layout::includeLayout('header');
 			Player (<?= $game->getPlayerPoints() ?> Points):
 		</li>
 		<a class="btn btn-dark ml-auto" href="<?=Url::toRoute('home/Reset')?>">Reset</a>
-		<div class="row col-12">
+
+		<div class="row col-12 mt-3">
 			<?php foreach ($game->getPlayerHand() as $card) { ?>
 				<div class="col-6 col-sm-4 col-md-3 col-xl-2 mb-3 _card">
 					<img class="player-card" src="<?=Asset::image('Cards/card' . $card->getIdentifier() . '.png')?>" alt="<?= $card->getIdentifier() ?>" data-card="<?= $card->getValue() ?>">

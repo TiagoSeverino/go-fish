@@ -29,7 +29,7 @@ class HomeController extends BaseController
         if(isset($_SESSION['user'])){
             Redirect::toRoute('home/index');
         }else{
-            return View::make('home.login');
+            return View::make('home.login', ['valid' => true]);
         }
     }
 
@@ -41,8 +41,7 @@ class HomeController extends BaseController
             Redirect::toRoute('home/index');
         }
         else{
-            Throw new Exception('Login Invalido');
-            //return View::make('home.index');
+            return View::make('home.login', ['valid' => false]);
         }
     }
 
