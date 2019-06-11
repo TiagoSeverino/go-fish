@@ -41,7 +41,7 @@ class HomeController extends BaseController
     public function dologin(){
         $user = Utilizadores::find(Post::getAll());
 
-        if($user){
+        if($user && $user->isbanned == 0){
             Session::set('user', $user);
             Redirect::toRoute('home/index');
         }
