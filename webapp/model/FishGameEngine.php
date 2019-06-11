@@ -11,7 +11,7 @@ class FishGameEngine {
     private $_deck;
     private $_startingCardCount;
     private $_finished = false;
-    private $_debug = true;
+    private $_debug = false;
     private $_updatedDB = false;
 
     public function __construct($startingCardCount = 4){

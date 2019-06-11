@@ -38,12 +38,32 @@ $islogin = Data::get('islogin');
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
+                        <?php if($islogin === true){ ?>
 						<li class="nav-item">
-							<a href="<?=Url::toRoute('home/login')?>" class="nav-link">Play</a>
+							<a href="<?=Url::toRoute('home/login')?>" class="nav-link">PLAY</a>
 						</li>
-						<li class="nav-item">
-							<a href="<?=Url::toRoute('home/login')?>" class="nav-link">Login</a>
-						</li>
+                        <?php } ?>
+                        <li class="nav-item">
+                            <a href="<?=Url::toRoute('home/stats')?>" class="nav-link">STATS</a>
+                        </li>
+                        <?php
+                        if($islogin === true) {
+                            ?>
+                            <li class="nav-item">
+                                <a href="<?=Url::toRoute('home/profile')?>" class="nav-link">PROFILE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="<?=Url::toRoute('home/logout')?>" class="nav-link">LOGOUT</a>
+                            </li>
+                            <?php
+                        }else {
+                            ?>
+                            <li class="nav-item">
+                                <a href="<?=Url::toRoute('home/logout')?>" class="nav-link">SIGN IN/ SIGN UP</a>
+                            </li>
+                            <?php
+                        }
+                        ?>
 					</ul>
 				</div>
 			</nav>
