@@ -23,9 +23,8 @@ Router::get('home/signup', 'HomeController/register');
 Router::post('home/signup', 'HomeController/doregister');
 Router::get('home/logout', 'HomeController/logout');
 
-Router::get('home/gofish', 'TestController/index');
-Router::post('home/gofish', 'TestController/play');
-Router::get('home/Reset', 'TestController/delete');
+Router::post('home/play', 'HomeController/play');
+Router::get('home/Reset', 'HomeController/newgame');
 
 Router::get('home/profile', 'HomeController/showProfile');
 Router::post('home/profile', 'HomeController/updateProfile');
