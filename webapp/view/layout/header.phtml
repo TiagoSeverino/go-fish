@@ -40,26 +40,26 @@ $islogin = Data::get('islogin');
 					<ul class="navbar-nav ml-auto">
                         <?php if($islogin === true){ ?>
 						<li class="nav-item">
-							<a href="<?=Url::toRoute('home/login')?>" class="nav-link">PLAY</a>
+							<a href="<?=Url::toRoute('home/login')?>" class="nav-link">Play</a>
 						</li>
                         <?php } ?>
                         <li class="nav-item">
-                            <a href="<?=Url::toRoute('home/stats')?>" class="nav-link">STATS</a>
+                            <a href="<?=Url::toRoute('home/stats')?>" class="nav-link">Stats</a>
                         </li>
                         <?php
                         if($islogin === true) {
                             ?>
                             <li class="nav-item">
-                                <a href="<?=Url::toRoute('home/profile')?>" class="nav-link">PROFILE</a>
+                                <a href="<?=Url::toRoute('home/profile')?>" class="nav-link">Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?=Url::toRoute('home/logout')?>" class="nav-link">LOGOUT</a>
+                                <a href="<?=Url::toRoute('home/logout')?>" class="nav-link">Logout</a>
                             </li>
                             <?php
                         }else {
                             ?>
                             <li class="nav-item">
-                                <a href="<?=Url::toRoute('home/logout')?>" class="nav-link">SIGN IN/ SIGN UP</a>
+                                <a href="<?=Url::toRoute('home/logout')?>" class="nav-link">Sign in/ Sign Up</a>
                             </li>
                             <?php
                         }
