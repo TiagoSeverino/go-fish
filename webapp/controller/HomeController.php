@@ -14,11 +14,12 @@ use Tracy\Debugger;
  */
 class HomeController extends BaseController
 {
+    public function isLoggedIn(){
+        return isset( $_SESSION['user']);
+    }
 
     public function index(){
-
-        $islogin = isset( $_SESSION['user']);
-        if($islogin == true){
+        if( $this->isLoggedIn() ){
             $this->showgame();
         }else {
             Redirect::toRoute('home/login');
@@ -26,7 +27,7 @@ class HomeController extends BaseController
     }
 
     public function login(){
-        if(isset($_SESSION['user'])){
+        if( $this->isLoggedIn() ){
             Redirect::toRoute('home/index');
         }else{
             return View::make('home.login', ['valid' => true]);
@@ -47,7 +48,7 @@ class HomeController extends BaseController
 
     public function register(){
 
-        if(isset($_SESSION['user'])){
+        if( $this->isLoggedIn() ){
             Redirect::toRoute('home/index');
         }else{
             return View::make('home.signup');
@@ -81,12 +82,10 @@ class HomeController extends BaseController
     }
 
     public function showProfile(){
-        $islogin = isset( $_SESSION['user']);
-        return View::make('home.profile', ['utilizador' => Session::get('user'), 'islogin' => $islogin]);
+        return View::make('home.profile', ['utilizador' => Session::get('user'), 'islogin' =>  $this->isLoggedIn() ]);
     }
 
-    public function updateProfile()
-    {
+    public function updateProfile(){
         $utilizador = Utilizadores::find(Session::get('user')->id);
         $utilizador->update_attributes(Post::getAll());
 
@@ -107,13 +106,11 @@ class HomeController extends BaseController
     }
 
     public function stats(){
-        $islogin = isset( $_SESSION['user']);
-
         /* como selecionar os 10 primeiros users ordenados pelas vitorias a partir da base de dados */
         $options = array('limit' => 10, 'order' => 'numerovitorias desc, numerojogos asc');
         $users = Utilizadores::find('all',$options);
 
-        return View::make('home.stats', ['islogin' => $islogin, 'users' => $users]);
+        return View::make('home.stats', ['islogin' =>  $this->isLoggedIn() , 'users' => $users]);
 
     }
 
@@ -147,14 +144,12 @@ class HomeController extends BaseController
             $user->save();
         }
 
-        $islogin = isset( $_SESSION['user']);
-
         if ($game->isFinished()){
             return View::make('home.GameFinished', ['game' => $game, 'won' => ($game->getPlayerPoints() > $game->getBotPoints())]);
         }
         else
         {
-            return View::make('home.GoFish', ['game' => $game,'islogin' => $islogin]);
+            return View::make('home.GoFish', ['game' => $game,'islogin' =>  $this->isLoggedIn()]);
         }
     }
 
@@ -222,17 +217,10 @@ class HomeController extends BaseController
     }
 
     public function admin() {
-        $islogin = isset( $_SESSION['user']);
-
-        if ($islogin && Session::get('user')->isadmin){
-            return View::make('home.admin', ['islogin' => $islogin, 'users' => Utilizadores::all()]);
+        if ( $this->isLoggedIn() && Session::get('user')->isadmin){
+            return View::make('home.admin', ['islogin' => $this->isLoggedIn(), 'users' => Utilizadores::all()]);
         }else{
             Redirect::toRoute('home/index');
         }
-
-
-
     }
-
-
 }
